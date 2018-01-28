@@ -11,4 +11,4 @@ for ($i = 1; $i -le $CLUSTER_COUNT; $i++) {
 }
 Write-Output  "build docker hadoop image"
 # rebuild kiwenlau/hadoop image
-# docker build -t joway/hadoop-cluster:latest .
+docker build -t joway/hadoop-cluster:latest .

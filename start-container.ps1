@@ -5,12 +5,13 @@ if (-not (Test-Path $VOLUME)) {
 	mkdir $VOLUME
 }
 Write-Output "start hadoop-master container..."
+docker rm -f hadoop-master > $null
 
 	docker run -itd `
 	--net=hadoop `
 	-p 50070:50070 `
 	-p 8088:8088 `
-	-v "${VOLUME}:/root/src"`
+	-v "${VOLUME}:/root/src/"`
 	--name hadoop-master `
 	--hostname hadoop-master `
 	joway/hadoop-cluster > $null
